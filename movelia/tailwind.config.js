@@ -1,9 +1,19 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: [],
+  content: [
+      './src/**/*.{ts,tsx}'
+  ],
   theme: {
-    extend: {},
+    extend: {
+      colors:{
+        primary:'',
+        header:'',
+        body:'',
+      }
+    },
   },
-  plugins: [],
+  plugins: [
+      require('@tailwindcss/line-camp')
+  ],
 }
 
