@@ -11,10 +11,10 @@ export interface Season {
 
 export interface Film {
     id: number,
-    title: string
-    description: string
-    posterPath: string
-    coverPath: string
-    genreIds: number[]
-    seasons: Season[]
+    title?: string
+    description?: string
+    posterPath?: string
+    coverPath?: string
+    genreIds?: number[]
+    seasons?: Season[]
 }
