@@ -3,6 +3,7 @@ import React, {useEffect, useRef, useState} from "react";
 import {Link, useLocation, useNavigate, useSearchParams} from "react-router-dom";
 import {mergeClassName} from "../utils";
 import {IoIosSearch} from "react-icons/io"
+import {SearchResult} from "../components/search-result";
 
 const MENU_CLASS = `
     p-1.5
@@ -22,7 +23,7 @@ export const Header = () => {
     const pathnameRef = useRef('')
 
     const [keyword,setKeyword] = useState ('')
-    const [isSearch, setSearchFocus] = useState(false)
+    const [isSearchFocus, setSearchFocus] = useState(false)
     const searchRef = useRef<HTMLInputElement>(null)
 
     const goToSearchPage = () => {
@@ -90,6 +91,7 @@ export const Header = () => {
                     p-1
                     flex-[0.5]
                     focus-within:border-primary
+                    relative
                 ">
                     <input
                         onClick={e => {
@@ -104,6 +106,14 @@ export const Header = () => {
                         placeholder={"search..."}
                     ></input>
                     <IoIosSearch size={20}></IoIosSearch>
+                    {/*tmp results*/}
+                    {
+                        isSearchFocus ?
+                          (  <SearchResult keyword={keyword} goToSearchPage={goToSearchPage}></SearchResult> ) :
+                            (
+                                ''
+                            )
+                    }
                 </div>
             </Container>
         </div>
