@@ -6,14 +6,14 @@ module.exports = {
   theme: {
     extend: {
       colors:{
-        primary:'',
-        header:'',
-        body:'',
+        primary:'#423F71',
+        header:'#292841',
+        body:'#1C1B29',
       }
     },
   },
   plugins: [
-      require('@tailwindcss/line-camp')
+      require('@tailwindcss/line-clamp')
   ],
 }
 
